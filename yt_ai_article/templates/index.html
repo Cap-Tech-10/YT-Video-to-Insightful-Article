@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube to AI Article</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎥 YouTube → AI Article Generator</h1>
+
+    <form method="POST">
+        <input type="text" name="url" placeholder="Enter YouTube URL" required>
+        <button type="submit">Generate</button>
+    </form>
+
+    {% if article %}
+        <div class="output">
+            <h2>Generated Article</h2>
+            <pre>{{ article }}</pre>
+
+            <a href="/download">
+                <button>Download PDF</button>
+            </a>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
